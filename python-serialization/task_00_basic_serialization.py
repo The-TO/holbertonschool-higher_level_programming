@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-from task_00_basic_serialization import load_and_deserialize, serialize_and_save_to_file
-
-
 def serialize_and_save_to_file(data, filename):
     with open(filename, "w") as f:
         json.dump(data, f)
