@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to list all states from database"""
+"""Script to list speicifc states from database"""
 
 import MySQLdb
 import sys
@@ -13,9 +13,10 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states ORDER BY id")
+    cur.execute("SELECT id, name FROM states WHERE LIKE BINARY 'N%' ORDER BY id")
     rows = cur.fetchall()
     for n in rows:
         print(n)
 
+    cur.close()
     db.close()
