@@ -14,7 +14,7 @@ class LeAPIHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write("Hello, this is a simple API!".encode(utf-8))
+            self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
 
         elif self.path == "/data":
             data = {"name": "John", "age": 30, "city": "New York"}
