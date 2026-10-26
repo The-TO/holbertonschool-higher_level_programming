@@ -2,8 +2,8 @@
 
 const nbrArgs = process.argv[2];
 
-if (nbrArgs >= nbrArgs[2]) {
-  console.log(nbrArgs);
-} else {
+if (nbrArgs === undefined){
   console.log('No argument');
+} else {
+  console.log(nbrArgs)
 }
