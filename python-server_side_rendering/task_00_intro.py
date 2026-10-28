@@ -14,7 +14,8 @@ def generate_invitations(template, attendees):
         print("Template is empty, no output files generated.")
         return
     if len(attendees) == 0:
-        print("attendees list is empty, no output files generated")
+        print("No data provided, no output files generated.")
+        return
 
     placeholder = ["name", "event_title", "event_date", "event_location"]
 
