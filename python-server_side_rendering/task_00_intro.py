@@ -3,7 +3,7 @@
 
 def generate_invitations(template, attendees):
     """créer un fichier output_X.txt par participant, en remplissant le modèle"""
-    if not isinstance("templates", str):
+    if not isinstance(template, str):
         print(f"Error: template must be a string, got {type(template).__name__}")
         return
     if not isinstance(attendees, list) or \
@@ -27,8 +27,8 @@ def generate_invitations(template, attendees):
                 value = "N/A"
             content = content.replace("{" + key + "}", str(value))
 
-    try:
-        with open("output_{}.txt".format(i), "w") as f:
-            f.write(content)
-    except OSError as e:
-        print(f"Error writing output_{i}.txt: {e}")
+        try:
+            with open("output_{}.txt".format(i), "w") as f:
+                f.write(content)
+        except OSError as e:
+            print(f"Error writing output_{i}.txt: {e}")
