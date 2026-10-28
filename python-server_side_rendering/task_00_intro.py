@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """Genere un fichier d'invitation personnalisé depuis le template"""
 
+
 def generate_invitations(template, attendees):
-    """créer un fichier output_X.txt par participant, en remplissant le modèle"""
+    """créer un fichier output_X.txt par participant, remplissant le modèle"""
     if not isinstance(template, str):
         print(f"Error: template must be a string, got {type(template).__name__}")
         return
     if not isinstance(attendees, list) or \
-            not all(isinstance(a, dict) for a in attendees ):
+            not all(isinstance(a, dict) for a in attendees):
         print(f"Error: attendees must be a {type(attendees).__name__} and contains dictionaries")
         return
     if not template:
